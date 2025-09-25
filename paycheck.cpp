@@ -2,15 +2,15 @@
 // and multiplies them to get grosspay.
 // It then calculates net pay by subtracting 15%
 
-// PLACE YOUR NAME HERE
+// SAMUEL TORRES
 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-// Function prototypes 
+// Function prototypes
 void printDescription();
-void computePaycheck(float, int, float&, float&);
+void computePaycheck(float, int, float &, float &);
 
 int main()
 {
@@ -22,19 +22,22 @@ int main()
 	cout << setprecision(2) << fixed;
 	cout << "Welcome to the Pay Roll Program" << endl;
 
-	printDescription();		// Call to Description function 
+	printDescription(); // Call to Description function
 
 	cout << "Please input the pay per hour" << endl;
 	cin >> payRate;
 
-	cout << endl << "Please input the number of hours worked" << endl;
+	cout << endl
+		 << "Please input the number of hours worked" << endl;
 	cin >> hours;
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	computePaycheck(payRate, hours, grossPay, netPay);
 
 	// Fill in the code to output grossPay
+	cout << "The gross pay is $" << grossPay << endl;
 
 	cout << "The net pay is $" << netPay << endl;
 
@@ -54,11 +57,13 @@ int main()
 
 void printDescription() // The function heading
 {
-	cout << "************************************************" << endl << endl;
+	cout << "************************************************" << endl
+		 << endl;
 	cout << "This program takes two numbers (payRate & hours)" << endl;
 	cout << "and multiplies them to get gross pay " << endl;
 	cout << "it then calculates net pay by subtracting 15%" << endl;
-	cout << "************************************************" << endl << endl;
+	cout << "************************************************" << endl
+		 << endl;
 }
 
 //	*********************************************************************
@@ -71,7 +76,13 @@ void printDescription() // The function heading
 //
 //	********************************************************************
 
-void computePaycheck(float rate, int time, float& gross, float& net)
+void computePaycheck(float rate, int time, float &gross, float &net)
 {
 	// Fill in the code to find gross pay and net pay
+
+	// gross pay is rate times hours
+	gross = rate * time;
+
+	// net pay subtracts 15% from gross
+	net = gross * 0.85f; // same as gross - (gross * 0.15f)
 }
