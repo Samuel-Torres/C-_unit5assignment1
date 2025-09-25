@@ -3,13 +3,15 @@
 // "Now is the time for all good men to come to the aid of their ___"
 // Inputting a 1 will use the word party. Any other number will use the word country.
 
-// PLACE YOUR NAME HERE
+// SAMUEL TORRES
 
 #include <iostream>
 #include <string>
 using namespace std;
 
 // Fill in the prototype of the function writeProverb.
+
+void writeProverb(int number);
 
 int main()
 {
@@ -18,13 +20,15 @@ int main()
 	cout << "Given the phrase:" << endl;
 	cout << "Now is the time for all good men to come to the aid of their ___"
 		 << endl;
-
-	cout << "Input a 1 if you want the sentence to be finished with party"
-		 << endl;
-	cout << "Input any other number for the word country" << endl;
-
+	cout << "Input a 1 if you want the sentence to be finished with party" << endl;
+	cout << "Input a 2 if you want the sentence to be finished with country" << endl;
 	cout << "Please input your choice now" << endl;
-	cin >> wordCode; 
+	cin >> wordCode;
+	while (wordCode != 1 && wordCode != 2)
+	{
+		cout << "Invalid choice. Enter 1 for 'party' or 2 for 'country': " << endl;
+		cin >> wordCode;
+	}
 	cout << endl;
 
 	writeProverb(wordCode);
@@ -47,5 +51,16 @@ int main()
 
 void writeProverb(int number)
 {
-	// Fill in the body of the function to accomplish what is described above
+	if (number == 1)
+	{
+		cout << "Now is the time for all good men to come to the aid of their party." << endl;
+	}
+	else if (number == 2)
+	{
+		cout << "Now is the time for all good men to come to the aid of their country." << endl;
+	}
+	else
+	{
+		cout << "Invalid code passed to writeProverb()." << endl;
+	}
 }
